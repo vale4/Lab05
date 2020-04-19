@@ -1,9 +1,6 @@
 package it.polito.tdp.anagrammi;
 
 import javafx.application.Application;
-import static javafx.application.Application.launch;
-
-import it.polito.tdp.anagrammi.FXMLController;
 import it.polito.tdp.anagrammi.model.AnagrammiModel;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,7 +24,7 @@ public class EntryPoint extends Application {
         AnagrammiModel model = new AnagrammiModel();
         controller.setModel(model);
             
-        stage.setTitle("JavaFX and Maven");
+        stage.setTitle("Calcola Anagrammi");
         stage.setScene(scene);
         stage.show();
     }
