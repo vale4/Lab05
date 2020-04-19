@@ -39,6 +39,11 @@ public class FXMLController {
 
     @FXML // fx:id="btnReset"
     private Button btnReset; // Value injected by FXMLLoader
+    
+    /**
+     * Il metodo si occupa di far apparire i risultati del calcolo degli anagrammi
+     * @param event
+     */
 
     @FXML
     void doCalcola(ActionEvent event) {
@@ -57,6 +62,10 @@ public class FXMLController {
 
     }
 
+    /**
+     * Il metodo si occupa di resettare i campi di testo
+     * @param event
+     */
     @FXML
     void doReset(ActionEvent event) {
     	txtCorretti.clear();
