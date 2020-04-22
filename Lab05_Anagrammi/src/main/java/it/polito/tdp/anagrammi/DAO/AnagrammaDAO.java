@@ -5,9 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import it.polito.tdp.anagrammi.DAO.ConnectDB;
-
 public class AnagrammaDAO {
+	
+	/**
+	 * Il metodo si occupa di verificare se una determinata stringa sia contenuta nel dizionario.
+	 * @param anagramma - parola da ricercare nel dizionario.
+	 * @return - il valore di ritorno è un booleano
+	 */
 	
 	public boolean isCorrect(String anagramma){
 

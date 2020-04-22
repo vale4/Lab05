@@ -39,14 +39,35 @@ public class FXMLController {
 
     @FXML // fx:id="btnReset"
     private Button btnReset; // Value injected by FXMLLoader
+    
+    
+    
+    /**
+     * Il metodo si occupa di far apparire i risultati del calcolo degli anagrammi
+     * @param event
+     */
 
     @FXML
     void doCalcola(ActionEvent event) {
+    	String parola;
     	
     	txtCorretti.clear();
     	txtErrati.clear();
     	
-    	Set<String> anagrammi = this.model.calcolaAnagrammi(txtParola.getText());
+    	parola = txtParola.getText();
+    	
+    	if(parola.length()<2) {
+    		txtCorretti.appendText("Parola inserita troppo corta");
+    		txtErrati.appendText("Parola inserita troppo corta");
+    		return;
+    	}
+    	if(parola.length()>8) {
+    		txtCorretti.appendText("Parola inserita troppo lunga");
+    		txtErrati.appendText("Parola inserita troppo lunga");
+    		return;
+    	}
+    	
+    	Set<String> anagrammi = this.model.calcolaAnagrammi(parola);
     	
     	for(String anagramma : anagrammi){
     		if(this.model.isCorrect(anagramma))
@@ -57,6 +78,12 @@ public class FXMLController {
 
     }
 
+    
+    
+    /**
+     * Il metodo si occupa di resettare i campi di testo
+     * @param event
+     */
     @FXML
     void doReset(ActionEvent event) {
     	txtCorretti.clear();
